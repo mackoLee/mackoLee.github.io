@@ -1,5 +1,10 @@
 import { createApp } from 'vue'
-import './style.css'
+import './style/index.scss'
 import App from './App.vue'
+import {useQuasarPlugin} from "@/plugins/quasar";
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+useQuasarPlugin(app);
+
+app.mount('#app')
