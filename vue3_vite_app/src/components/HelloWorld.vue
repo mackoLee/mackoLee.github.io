@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import {useEmitter} from "@/plugins/mitt";
+
+const emitter = useEmitter();
+
+const onClick=()=>{
+  emitter.emit("test", "Hello World");
+}
 
 defineProps<{ msg: string }>()
 
@@ -12,7 +19,7 @@ const count = ref(0)
   <div class="card">
     <q-btn
       type="button"
-      @click="count++"
+      @click="onClick"
     >
       count is {{ count }}
     </q-btn>
