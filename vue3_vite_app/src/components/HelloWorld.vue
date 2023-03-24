@@ -1,12 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import {useEmitter} from "@/plugins/mitt";
-
-const emitter = useEmitter();
-
-const onClick=()=>{
-  emitter.emit("test", "Hello World");
-}
 
 defineProps<{ msg: string }>()
 
@@ -17,12 +10,12 @@ const count = ref(0)
   <h1>{{ msg }}</h1>
 
   <div class="card">
-    <q-btn
+    <button
       type="button"
-      @click="onClick"
+      @click="count++"
     >
       count is {{ count }}
-    </q-btn>
+    </button>
     <p>
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
