@@ -13,6 +13,6 @@ const count = computed(() => counterStore.count);
     Pinia Store Test
   </h3>
   counter state count: {{ count }}
-  <IncrementButton />
+  <increment-button />
   <decrement-button />
 </template>
