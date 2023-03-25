@@ -1,0 +1,1 @@
+import{Q as t}from"./QBtn-4444a46d.js";import{u as o}from"./counter-a6a4a088.js";import{d as r,g as n,w as c,u as a,o as s,b as m}from"./index-4300c7a3.js";const C=r({__name:"IncrementButton",setup(u){const e=o();return(i,p)=>(s(),n(t,{color:"primary",onClick:a(e).increment},{default:c(()=>[m(" Increment! ")]),_:1},8,["onClick"]))}});export{C as _};

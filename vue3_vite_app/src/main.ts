@@ -13,7 +13,7 @@ const app = createApp(App)
 for (const path in plugins) {
     try {
         const {default: plugin} = plugins[path]
-        await plugin(app)
+        plugin(app)
     }
     catch (error) {
         console.error(`Error while loading plugin "${path}".`)
