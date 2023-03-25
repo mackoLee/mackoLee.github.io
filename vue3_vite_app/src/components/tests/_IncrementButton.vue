@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import {useCounterStore} from "@/stores/counter.js";
+import {useCounterStore} from "@/stores/counter";
 
 const counterStore = useCounterStore();
 </script>
 <template>
   <q-btn
     color="primary"
-    @click="counterStore.decrement"
+    @click="counterStore.increment"
   >
-    Decrement!
+    Increment!
   </q-btn>
 </template>

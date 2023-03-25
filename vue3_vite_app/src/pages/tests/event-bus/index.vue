@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import EventEmitRecieveContetent from "@/pages/tests/event-bus/EventEmitRecieveContetent.vue";
-import EventEmitButton from "@/pages/tests/event-bus/EventEmitButton.vue";
+import EventEmitRecieveContetent from "@/components/tests/_EventEmitRecieveContetent.vue";
+import EventEmitButton from "@/components/tests/_EventEmitButton.vue";
 </script>
 <template>
   <h3>

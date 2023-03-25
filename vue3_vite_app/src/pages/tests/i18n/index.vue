@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LocaleSelect from "@/pages/tests/i18n/LocaleSelect.vue";
+import LocaleSelect from "@/components/tests/_LocaleSelect.vue";
 </script>
 <template>
   <h3>
