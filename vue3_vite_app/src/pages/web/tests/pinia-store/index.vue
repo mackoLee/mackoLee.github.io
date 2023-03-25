@@ -2,7 +2,7 @@
 import IncrementButton from "@/components/tests/_IncrementButton.vue";
 import DecrementButton from "@/components/tests/_DecrementButton.vue";
 
-import {useCounterStore} from "@/stores/counter.js";
+import {useCounterStore} from "@/stores/counter";
 import {computed} from "vue";
 const counterStore = useCounterStore();
 
