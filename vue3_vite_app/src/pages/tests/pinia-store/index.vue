@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import IncrementButton from "@/pages/tests/pinia-store/IncrementButton.vue";
-import DecrementButton from "@/pages/tests/pinia-store/DecrementButton.vue";
+import IncrementButton from "@/components/tests/_IncrementButton.vue";
+import DecrementButton from "@/components/tests/_DecrementButton.vue";
 
 import {useCounterStore} from "@/stores/counter.js";
 import {computed} from "vue";
