@@ -1,13 +1,15 @@
+
 <script setup lang="ts">
 import HelloWorld from "@/components/HelloWorld.vue";
-import { useEmitter} from "@/plugins/mitt";
+import {usePlugins} from "@/composibles/plugins";
+import {onMounted} from "vue";
 
-const emitter = useEmitter();
+const {router} = usePlugins();
 
-emitter.on("test", (data) => {
-  console.log(data);
-});
+onMounted(()=>router.push("/web/tests/i18n"))
+
+
 </script>
 <template>
-  <HelloWorld msg="Vite + Vue" />
+  <div />
 </template>
