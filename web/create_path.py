@@ -1,7 +1,11 @@
 import os
 
 paths = [
-    './', './tests', './tests/i18n'
+    './',
+    './tests',
+    './tests/event-bus',
+    './tests/pinia-store',
+    './tests/i18n'
 ]
 
 index_path = "../index.html"

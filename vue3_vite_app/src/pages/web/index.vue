@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import HelloWorld from "@/components/HelloWorld.vue";
-import { useEmitter} from "@/plugins/mitt";
+import DefaultLayout from "@/layouts/DefaultLayout.vue";
+import {usePlugins} from "@/composibles/plugins";
 
-const emitter = useEmitter();
+const {router, route} = usePlugins();
 
-emitter.on("test", (data) => {
-  console.log(data);
-});
+console.log('hi');
+window.router1 = router;
+window.route2 = route;
 </script>
 <template>
-  <HelloWorld msg="Vite + Vue" />
+  <DefaultLayout>
+    하이
+  </DefaultLayout>
 </template>

@@ -9,6 +9,14 @@ const i18n = createI18n({
 
 })
 
-export default function usePlugin(app: App) {
+export function useI18nT() {
+    return i18n.global.t;
+}
+
+export function useI18nTc() {
+    return i18n.global.tc;
+}
+
+export default function useI18nPlugin(app: App) {
     app.use(i18n);
 }
