@@ -1,13 +1,19 @@
 <script setup lang="ts">
 import {computed} from "vue";
 
-const props = defineProps<{
-  to: string | Object,
-  label: string,
-}>()
+const props = defineProps({
+to: {
+    type: [String, Object],
+    required: true,
+  },
+  label: {
+    type: String,
+    default: "",
+  },
+})
 
 const to = computed(() => props.to);
-
+const label = computed(() => props.label);
 
 </script>
 <template>

@@ -2,6 +2,7 @@ import os
 
 paths = [
     './',
+    './introduction',
     './tests',
     './tests/event-bus',
     './tests/pinia-store',
