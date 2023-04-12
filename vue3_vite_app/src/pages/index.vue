@@ -6,7 +6,7 @@ import {onMounted} from "vue";
 
 const {router} = usePlugins();
 
-onMounted(()=>router.push("/web/tests/i18n"))
+onMounted(()=>router.push("/web/introduction"))
 
 
 </script>
