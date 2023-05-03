@@ -7,10 +7,10 @@
 </template>
 <style lang="scss" scoped>
   .sky-space{
-    position: relative;
+    position: absolute;
+    top:0;
     width: 100%;
-
     background-image: linear-gradient(to bottom, #1E90FF, #87CEFA);
-    min-height: inherit;
+    min-height: 50%;
   }
 </style>
