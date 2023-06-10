@@ -83,8 +83,11 @@ onUnmounted(() => {
       :style="{
         transform: `translateX(${getX(stickLocation)-50}%) translateY(${getY(stickLocation)-50}%)`
       }"
-      @mousedown="onMousedown"
-    />
+    >
+      <q-tooltip>
+        Please reload page if it don't activate.
+      </q-tooltip>
+    </q-card>
   </div>
 </template>
 <style lang="scss" scoped>

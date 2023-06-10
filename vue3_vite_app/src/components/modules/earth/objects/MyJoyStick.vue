@@ -33,6 +33,8 @@ const onMove = (vector: Vector2D) => {
 <template>
   <joy-stick
     style="z-index:100"
+    :x="30"
+    :y="30"
     @move="onMove"
   />
 </template>
