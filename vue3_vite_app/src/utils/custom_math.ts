@@ -1,4 +1,4 @@
-interface Vector2D {
+export interface Vector2D {
     value: number;
     angle: number;
 }
@@ -8,18 +8,25 @@ export const getRandomInteger = (min: number, max: number): number => {
 };
 
 export const addVectors = (vector1: Vector2D, vector2: Vector2D):Vector2D => {
-    const x1 = vector1.value * Math.cos(vector1.angle) ;
-    const y1 = vector1.value * Math.sin(vector1.angle);
-    const x2 = vector2.value * Math.cos(vector2.angle);
-    const y2 = vector2.value * Math.sin(vector2.angle);
-    const x = x1 + x2;
-    const y = y1 + y2;
+    const x1 = getX(vector1);
+    const y1 = getY(vector1);
+    const x2 = getX(vector2);
+    const y2 = getY(vector2);
 
-    const angle = Math.atan2(y, x);
-    const value = Math.sqrt(x * x + y * y);
-    console.log(x1,y1)
-    console.log(x2,y2)
-    // console.log(value, angle);
-    return {value, angle};
+    return makeVector2D(x1 + x2,  y1 + y2);
 }
 
+export const getX = (vector: Vector2D): number => {
+    return vector.value * Math.cos(vector.angle);
+}
+
+export const getY = (vector: Vector2D): number => {
+    return vector.value * Math.sin(vector.angle);
+}
+
+export const makeVector2D = (x: number, y: number): Vector2D => {
+    const angle = Math.atan2(y, x);
+    const value = Math.sqrt(x * x + y * y);
+    return {value, angle};
+
+}

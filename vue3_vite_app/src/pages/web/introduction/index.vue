@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
 import EarthSpace from "@/components/modules/earth/EarthSpace.vue";
 import SkySpace from "@/components/modules/earth/SkySpace.vue";
@@ -7,6 +6,8 @@ import DefaultCloud from "@/components/modules/earth/objects/clouds/DefaultCloud
 import SeaSpace from "@/components/modules/earth/SeaSpace.vue";
 import DefaultShip from "@/components/modules/earth/objects/ships/DefaultShip.vue";
 import Me from "@/components/modules/earth/objects/human/me.vue";
+import MyJoyStick from "@/components/modules/earth/objects/MyJoyStick.vue";
+
 </script>
 <template>
   <default-layout>
@@ -23,6 +24,7 @@ import Me from "@/components/modules/earth/objects/human/me.vue";
           </default-ship>
         </sea-space>
       </earth-space>
+      <my-joy-stick />
     </q-page>
   </default-layout>
 </template>

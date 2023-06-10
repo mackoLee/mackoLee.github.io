@@ -36,10 +36,10 @@ export const useShipStore = defineStore('ship', {
             y = Math.min(y, 100);
             this.location.y = y;
         },
-        accelerate(angle: number) {
+        accelerate(angle: number, rate: number = 1) {
             const result = addVectors(
                 {value: this.movement.speed, angle: this.movement.angle},
-                {value: this.acceleration, angle}
+                {value: this.acceleration*rate, angle}
             );
             this.movement.speed = result.value;
             this.movement.angle = result.angle;
