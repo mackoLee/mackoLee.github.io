@@ -37,13 +37,16 @@ const setStickLocation = (vector: Vector2D) => {
     }
     emit('move', moveVector);
 }
-const onMousedown = (ev: any) => {
+const onTouchPan = (ev: any) => {
     const offset = ev.offset;
     const delta = ev.delta;
 
     const vector = makeVector2D( offset.x-delta.x, offset.y-delta.y)
 
     setStickLocation(vector)
+}
+
+const onMousedown = (ev: any) =>{
 }
 
 const resetStickLocation = () => {
@@ -74,11 +77,13 @@ onUnmounted(() => {
       class="joystick__base"
     />
     <q-card
-      v-touch-pan.prevent="onMousedown"
+      v-touch-pan.prevent.mouse="onTouchPan"
+
       class="joystick__stick"
       :style="{
         transform: `translateX(${getX(stickLocation)-50}%) translateY(${getY(stickLocation)-50}%)`
       }"
+      @mousedown="onMousedown"
     />
   </div>
 </template>
