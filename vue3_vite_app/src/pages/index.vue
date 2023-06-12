@@ -1,10 +1,11 @@
 
 <script setup lang="ts">
 import HelloWorld from "@/components/HelloWorld.vue";
-import {usePlugins} from "@/composibles/plugins";
-import {onMounted} from "vue";
 
-const {router} = usePlugins();
+import {onMounted} from "vue";
+import {useRouter} from "vue-router";
+
+const router = useRouter()
 
 onMounted(()=>router.push("/web/introduction"))
 

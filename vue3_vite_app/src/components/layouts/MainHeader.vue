@@ -31,8 +31,6 @@ import MainHeaderTestsTabs from "@/components/modules/MainHeaderTestsTabs.vue";
       </q-toolbar-title>
     </q-toolbar>
 
-    <main-header-tests-tabs
-      v-if="$route.path.startsWith('/web/tests')"
-    />
+    <slot name="header-tabs" />
   </q-header>
 </template>

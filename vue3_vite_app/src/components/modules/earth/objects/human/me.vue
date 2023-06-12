@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import MyMessage from "@/components/modules/earth/objects/human/MyMessage.vue";
-import {usePlugins} from "@/composibles/plugins";
 import {ref} from "vue";
-const {emitter} = usePlugins();
+import {useEmitter} from "@/plugins/mitt";
+const emitter = useEmitter();
 
 const mouseOver = ref(false);
 emitter.on('mouseoverMe', () => {

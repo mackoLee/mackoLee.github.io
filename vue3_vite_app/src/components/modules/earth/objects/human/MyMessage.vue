@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import { ref} from "vue";
-import {usePlugins} from "@/composibles/plugins";
 
-const { emitter } = usePlugins();
+
+import {useEmitter} from "@/plugins/mitt";
+
+const emitter = useEmitter();
 
 const mouseOver = ref(false);
 emitter.on('mouseoverMe', () => {

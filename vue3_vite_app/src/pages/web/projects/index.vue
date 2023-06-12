@@ -2,7 +2,6 @@
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
 </script>
 <template>
-  <DefaultLayout>
-    하이
-  </DefaultLayout>
+  <default-layout />
+  {{ $router.push('/web/projects/coupon') }}
 </template>

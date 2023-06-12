@@ -2,10 +2,14 @@
 import EventEmitRecieveContetent from "@/components/modules/tests/_EventEmitRecieveContetent.vue";
 import EventEmitButton from "@/components/modules/tests/_EventEmitButton.vue";
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
+import MainHeaderTestsTabs from "@/components/modules/MainHeaderTestsTabs.vue";
 
 </script>
 <template>
   <DefaultLayout>
+    <template #header-tabs>
+      <main-header-tests-tabs />
+    </template>
     <h3>
       Event Bus Test
     </h3>

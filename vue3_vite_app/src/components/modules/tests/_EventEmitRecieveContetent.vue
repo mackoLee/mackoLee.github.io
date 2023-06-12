@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import {Events, ref} from "vue";
-import {usePlugins} from "@/composibles/plugins";
 import {EventType, Handler} from "mitt";
+import {useEmitter} from "@/plugins/mitt";
 
-const {emitter} = usePlugins();
+const emitter = useEmitter();
 
 const test = ref("");
 

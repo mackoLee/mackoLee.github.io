@@ -5,6 +5,7 @@ import DecrementButton from "@/components/modules/tests/_DecrementButton.vue";
 import {useCounterStore} from "@/stores/counter";
 import {computed} from "vue";
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
+import MainHeaderTestsTabs from "@/components/modules/MainHeaderTestsTabs.vue";
 
 const counterStore = useCounterStore();
 

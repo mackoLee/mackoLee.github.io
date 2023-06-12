@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { usePlugins } from "@/composibles/plugins";
+import {useEmitter} from "@/plugins/mitt";
 
-const { emitter } = usePlugins();
+const emitter = useEmitter();
 
 const onClick=()=>{
   emitter.emit("test", "Hello World");

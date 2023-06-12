@@ -1,7 +1,6 @@
-import { usePlugins } from "@/composibles/plugins";
+import {useRouter} from "vue-router";
 
-const { router } = usePlugins();
-
+const router  = useRouter();
 function getLink (to: string | Object) {
     try { return router.resolve(to) }
     catch (_) {}

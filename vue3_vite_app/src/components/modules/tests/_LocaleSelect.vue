@@ -1,10 +1,4 @@
 <script setup lang="ts">
-import {usePlugins} from "@/composibles/plugins";
-
-// const { i18n } = usePlugins();
-
-import {computed, ref} from "vue";
-
 const locales = [
   { label: "English", value: "en" },
   { label: "Korean", value: "ko" },

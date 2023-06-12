@@ -13,7 +13,11 @@ const rightDrawerOpen = ref(false)
 
 <template>
   <q-layout view="hhh LpR fff">
-    <main-header />
+    <main-header>
+      <template #header-tabs>
+        <slot name="header-tabs" />
+      </template>
+    </main-header>
 
     <q-drawer
       v-model="leftDrawerOpen"
