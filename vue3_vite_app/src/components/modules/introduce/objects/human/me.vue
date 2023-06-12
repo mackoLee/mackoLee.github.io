@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import MyMessage from "@/components/modules/earth/objects/human/MyMessage.vue";
+import MyMessage from "@/components/modules/introduce/objects/human/MyMessage.vue";
 import {ref} from "vue";
 import {useEmitter} from "@/plugins/mitt";
 const emitter = useEmitter();

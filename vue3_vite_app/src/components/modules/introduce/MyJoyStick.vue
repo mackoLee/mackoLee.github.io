@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import JoyStick from "@/components/drawing/JoyStick.vue";
-import {useShipStore} from "@/stores/ship.js";
-import {Vector2D} from "@/utils/custom_math.js";
+import JoyStick from "@/components/JoyStick.vue";
+import {useShipStore} from "@/stores/ship";
+import {Vector2D} from "@/utils/custom_math";
 import {onMounted, ref} from "vue";
 import {Ref} from "vue";
 

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import LocaleSelect from "@/components/modules/tests/_LocaleSelect.vue";
-import DefaultLayout from "@/layouts/DefaultLayout.vue";
-import MainHeaderTestsTabs from "@/components/modules/MainHeaderTestsTabs.vue";
+import LocaleSelect from "@/components/modules/tests/LocaleSelect.vue";
+import MainHeaderTestsTabs from "@/components/modules/TestsNavTabs.vue";
+import TestsLayout from "@/layouts/TestsLayout.vue";
 </script>
 <template>
-  <DefaultLayout>
+  <TestsLayout>
     <template #header-tabs>
       <main-header-tests-tabs />
     </template>
@@ -21,5 +21,5 @@ import MainHeaderTestsTabs from "@/components/modules/MainHeaderTestsTabs.vue";
     <div>
       {{ $tc("message.n_apples", 2) }}
     </div>
-  </DefaultLayout>
+  </TestsLayout>
 </template>

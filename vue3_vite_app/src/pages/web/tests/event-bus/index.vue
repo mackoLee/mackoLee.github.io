@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import EventEmitRecieveContetent from "@/components/modules/tests/_EventEmitRecieveContetent.vue";
-import EventEmitButton from "@/components/modules/tests/_EventEmitButton.vue";
-import DefaultLayout from "@/layouts/DefaultLayout.vue";
-import MainHeaderTestsTabs from "@/components/modules/MainHeaderTestsTabs.vue";
+import EventEmitRecieveContetent from "@/components/modules/tests/EventEmitRecieveContetent.vue";
+import EventEmitButton from "@/components/modules/tests/EventEmitButton.vue";
+import MainHeaderTestsTabs from "@/components/modules/TestsNavTabs.vue";
+import TestsLayout from "@/layouts/TestsLayout.vue";
 
 </script>
 <template>
-  <DefaultLayout>
+  <TestsLayout>
     <template #header-tabs>
       <main-header-tests-tabs />
     </template>
@@ -18,5 +18,5 @@ import MainHeaderTestsTabs from "@/components/modules/MainHeaderTestsTabs.vue";
       <event-emit-button />
     </div>
     <event-emit-recieve-contetent />
-  </DefaultLayout>
+  </TestsLayout>
 </template>
