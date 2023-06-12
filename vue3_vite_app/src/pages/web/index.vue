@@ -1,8 +1,4 @@
-<script setup lang="ts">
-import DefaultLayout from "@/layouts/DefaultLayout.vue";
-</script>
 <template>
-  <DefaultLayout>
-    하이
-  </DefaultLayout>
+  <!-- path: /web -->
+  {{ $router.push("/web/introduction") }}
 </template>

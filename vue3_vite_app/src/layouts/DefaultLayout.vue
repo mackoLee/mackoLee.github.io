@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import {ref} from 'vue'
-import MainHeader from "@/components/layouts/MainHeader.vue";
+import MainHeader from "@/modules/main/_components/MainHeader.vue";
 
-import MainHeaderTestsTabs from "@/components/modules/MainHeaderTestsTabs.vue";
-import MainFooter from "@/components/layouts/MainFooter.vue";
+import MainHeaderTestsTabs from "@/modules/tests/_components/TestsTabs.vue";
+import MainFooter from "@/modules/main/_components/MainFooter.vue";
 
 const leftDrawerOpen = ref(false)
 const rightDrawerOpen = ref(false)

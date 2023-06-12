@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import MLink from "@/components/MLink.vue";
-import MainHeaderTestsTabs from "@/components/modules/MainHeaderTestsTabs.vue";
+import MainHeaderTestsTabs from "@/modules/tests/_components/TestsTabs.vue";
 </script>
 <template>
   <!--text align center and middle-->

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {useGlobalPressedArrowKeys} from "@/composibles/keyboard";
 import {computed, onMounted, onUnmounted} from "vue";
-import {useShipStore} from "@/stores/ship";
+import {useShipStore} from "@/stores/shipStore";
 import {useEmitter} from "@/plugins/mitt";
 
 const emitter = useEmitter();

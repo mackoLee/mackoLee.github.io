@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
-import EarthSpace from "@/components/modules/earth/EarthSpace.vue";
-import SkySpace from "@/components/modules/earth/SkySpace.vue";
-import DefaultCloud from "@/components/modules/earth/objects/clouds/DefaultCloud.vue";
-import SeaSpace from "@/components/modules/earth/SeaSpace.vue";
-import DefaultShip from "@/components/modules/earth/objects/ships/DefaultShip.vue";
-import Me from "@/components/modules/earth/objects/human/me.vue";
-import MyJoyStick from "@/components/modules/earth/objects/MyJoyStick.vue";
+import EarthSpace from "@/modules/introduction/_components/EarthSpace.vue";
+import SkySpace from "@/modules/introduction/_components/SkySpace.vue";
+import DefaultCloud from "@/modules/introduction/_objects/clouds/DefaultCloud.vue";
+import SeaSpace from "@/modules/introduction/_components/SeaSpace.vue";
+import DefaultShip from "@/modules/introduction/_objects/ships/DefaultShip.vue";
+import Me from "@/modules/introduction/_objects/human/me.vue";
+import MyJoyStick from "@/modules/introduction/_components/MyJoyStick.vue";
 
 </script>
 <template>
