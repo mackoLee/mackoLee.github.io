@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+import {onMounted, onUnmounted} from "vue";
+
 const props = defineProps({
   bottom: {
     type: String,
@@ -12,6 +14,18 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['move']);
+
+const func = function(event: any) {
+  emit('move', {angle: 0, value: 0})
+}
+onMounted(() => {
+  document.addEventListener('touchend', func);
+  document.addEventListener('mouseup', func);
+});
+onUnmounted(() => {
+  document.removeEventListener('touchend', func);
+  document.removeEventListener('mouseup', func);
+});
 </script>
 <template>
   <div
@@ -28,7 +42,6 @@ const emit = defineEmits(['move']);
           name="fas fa-caret-up"
           @mousedown="()=>$emit('move', {angle: Math.PI*3/2, value: 1})"
           @touchstart="()=>$emit('move', {angle: Math.PI*3/2, value: 1})"
-          @mouseup="()=>$emit('move', {angle: Math.PI*3/2, value: 0})"
         />
       </div>
       <div class="col" />
@@ -40,7 +53,6 @@ const emit = defineEmits(['move']);
           name="fa-solid fa-caret-left"
           @mousedown="()=>$emit('move', {angle: Math.PI, value: 1})"
           @touchstart="()=>$emit('move', {angle: Math.PI, value: 1})"
-          @mouseup="()=>$emit('move', {angle: Math.PI, value: 0})"
         />
       </div>
       <div class="col-4 keypad">
@@ -48,7 +60,6 @@ const emit = defineEmits(['move']);
           name="fas fa-caret-down"
           @mousedown="()=>$emit('move', {angle: Math.PI/2, value: 1})"
           @touchstart="()=>$emit('move', {angle: Math.PI/2, value: 1})"
-          @mouseup="()=>$emit('move', {angle: Math.PI/2, value: 0})"
         />
       </div>
       <div class="col-4 keypad">
@@ -56,7 +67,6 @@ const emit = defineEmits(['move']);
           name="fas fa-caret-right"
           @mousedown="()=>$emit('move', {angle: 0, value: 1})"
           @touchstart="()=>$emit('move', {angle: 0, value: 1})"
-          @mouseup="()=>$emit('move', {angle: 0, value: 0})"
         />
       </div>
     </div>

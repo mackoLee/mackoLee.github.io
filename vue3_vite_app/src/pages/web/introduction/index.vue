@@ -9,7 +9,21 @@ import Me from "@/components/modules/introduce/objects/human/me.vue";
 import MyJoyStick from "@/components/modules/introduce/MyJoyStick.vue";
 import Keyboard from "@/components/Keyboard.vue";
 import MyKeyboard from "@/components/modules/introduce/MyKeyboard.vue";
+import {onMounted, onUnmounted} from "vue";
 
+
+const func = function(event: any) {
+  event.preventDefault(); // 기본 컨텍스트 메뉴 표시 방지
+}
+
+onMounted(() => {
+
+  document.addEventListener('contextmenu', func);
+});
+
+onUnmounted(() => {
+  document.removeEventListener('contextmenu', func);
+});
 </script>
 <template>
   <default-layout>
