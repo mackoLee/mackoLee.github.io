@@ -6,7 +6,9 @@ paths = [
     './tests',
     './tests/event-bus',
     './tests/pinia-store',
-    './tests/i18n'
+    './tests/i18n',
+    './projects',
+    './projects/coupon'
 ]
 
 index_path = "../index.html"

@@ -11,12 +11,14 @@ const counterStore = useCounterStore();
 const count = computed(() => counterStore.count);
 </script>
 <template>
-  <TestsLayout>
-    <h3>
-      Pinia Store Test
-    </h3>
-    counter state count: {{ count }}
-    <increment-button />
-    <decrement-button />
-  </TestsLayout>
+  <tests-layout>
+    <q-page>
+      <h3>
+        Pinia Store Test
+      </h3>
+      counter state count: {{ count }}
+      <increment-button />
+      <decrement-button />
+    </q-page>
+  </tests-layout>
 </template>

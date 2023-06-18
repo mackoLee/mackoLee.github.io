@@ -7,6 +7,8 @@ import SeaSpace from "@/components/modules/introduce/SeaSpace.vue";
 import DefaultShip from "@/components/modules/introduce/objects/ships/DefaultShip.vue";
 import Me from "@/components/modules/introduce/objects/human/me.vue";
 import MyJoyStick from "@/components/modules/introduce/MyJoyStick.vue";
+import Keyboard from "@/components/Keyboard.vue";
+import MyKeyboard from "@/components/modules/introduce/MyKeyboard.vue";
 
 </script>
 <template>
@@ -25,6 +27,7 @@ import MyJoyStick from "@/components/modules/introduce/MyJoyStick.vue";
         </sea-space>
       </earth-space>
       <my-joy-stick />
+      <my-keyboard />
     </q-page>
   </default-layout>
 </template>

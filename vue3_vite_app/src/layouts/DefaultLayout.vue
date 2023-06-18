@@ -2,7 +2,7 @@
 import {ref} from 'vue'
 import MainHeader from "@/components/modules/main/MainHeader.vue";
 
-import MainHeaderTestsTabs from "@/components/modules/TestsNavTabs.vue";
+import MainHeaderTestsTabs from "@/components/modules/tests/TestsNavTabs.vue";
 import MainFooter from "@/components/modules/main/MainFooter.vue";
 
 const leftDrawerOpen = ref(false)

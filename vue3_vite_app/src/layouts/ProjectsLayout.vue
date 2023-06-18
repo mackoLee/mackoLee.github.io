@@ -1,12 +1,18 @@
 <script setup lang="ts">
 import DefaultLayout from "@/layouts/DefaultLayout.vue";
-import TestsNavTabs from "@/components/modules/tests/TestsNavTabs.vue";
+import ProjectsNavTabs from "@/components/modules/projects/ProjectsNavTabs.vue";
 </script>
 <template>
   <default-layout>
     <template #header-tabs>
-      <tests-nav-tabs />
+      <projects-nav-tabs />
     </template>
     <slot />
   </default-layout>
 </template>
+<style lang="scss" scoped>
+#main {
+  min-height: 100%;
+  width: 100%;
+}
+</style>

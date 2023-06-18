@@ -4,13 +4,13 @@ import {onMounted, onUnmounted, Ref, ref} from "vue";
 import {Vector2D, getX, getY, makeVector2D} from "@/utils/custom_math";
 
 const props = defineProps({
-    x: {
-        type: Number,
-        default: 0
+    left: {
+        type: String,
+        default: '0'
     },
-    y: {
-        type: Number,
-        default: 0
+    bottom: {
+        type: String,
+        default: '0'
     },
     size: {
         type: Number,
@@ -69,8 +69,8 @@ onUnmounted(() => {
   <div
     class="joystick"
     :style="{
-      left: props.x+'px',
-      bottom: props.y+'px'
+      left: props.left+'px',
+      bottom: props.bottom+'px'
     }"
   >
     <div

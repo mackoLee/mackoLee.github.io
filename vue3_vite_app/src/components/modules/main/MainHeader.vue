@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import MLink from "@/components/MLink.vue";
-import MainHeaderTestsTabs from "@/components/modules/TestsNavTabs.vue";
+import HeaderLink from "@/components/HeaderLink.vue";
 </script>
 <template>
   <!--text align center and middle-->
@@ -18,16 +17,22 @@ import MainHeaderTestsTabs from "@/components/modules/TestsNavTabs.vue";
           />
         </q-avatar>
 
-        <m-link
+        <header-link
           to="/web/introduction"
         >
           Introduction
-        </m-link>
-        <m-link
+        </header-link>
+
+        <header-link
+          to="/web/projects"
+        >
+          Projects
+        </header-link>
+        <header-link
           to="/web/tests"
         >
           Tests
-        </m-link>
+        </header-link>
       </q-toolbar-title>
     </q-toolbar>
 
