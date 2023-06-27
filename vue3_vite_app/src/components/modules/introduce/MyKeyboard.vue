@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import {useShipStore} from "@/stores/ship";
 import {Vector2D} from "@/utils/custom_math";
-import {onMounted, ref} from "vue";
+import {onMounted, onUnmounted, ref} from "vue";
 import {Ref} from "vue";
 import Keyboard from "@/components/Keyboard.vue";
 
@@ -14,12 +14,17 @@ const localVector: Ref<Vector2D> = ref({
 
 localVector.value
 
+let timer: any = null;
 onMounted(() => {
-  setInterval(() => {
+  timer = setInterval(() => {
     localVector.value = lastMove.value;
     shipStore.accelerate(localVector.value.angle, localVector.value.value)
   }, 100)
 })
+onUnmounted(() => {
+  clearInterval(timer)
+})
+
 
 const lastMove: Ref<Vector2D> = ref({
   value: 0,

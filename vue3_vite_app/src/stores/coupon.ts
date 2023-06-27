@@ -15,8 +15,40 @@ export const useCouponStore = defineStore('coupon',{
                         isUsed: false,
                         question: '당신의 고향은 어디인가요?',
                         answer: '진해',
+                    },
+                    {
+                        name: '쿠폰2',
+                        description: '쿠폰2 설명',
+                        count: 10,
+                        isUsed: false,
+                        question: '당신의 고향은 어디인가요?',
+                        answer: '진해',
                     }
                 ]
+            },
+            {
+                userId: 2,
+                name: '이상옥',
+                nickname: '이상옥',
+                couponList: [
+                    {
+                        name: '쿠폰1',
+                        description: '쿠폰1 설명',
+                        count: 0,
+                        isUsed: false,
+                        question: '당신의 고향은 어디인가요?',
+                        answer: '진해',
+                    },
+                    {
+                        name: '쿠폰2',
+                        description: '쿠폰2 설명',
+                        count: 10,
+                        isUsed: true,
+                        question: '당신의 고향은 어디인가요?',
+                        answer: '진해',
+                    }
+                ]
+
             }
         ],
         selectedUserId: 0,
