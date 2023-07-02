@@ -8,6 +8,7 @@ import FullScreenBtn from "@/components/modules/projects/FullScreenBtn.vue";
 import MainModeAdminLayout from "@/components/modules/projects/main-mode/MainModeAdminLayout.vue";
 import SearchModeAdminLayout from "@/components/modules/projects/search-mode/SearchModeAdminLayout.vue";
 import SearchModeCustomerLayout from "@/components/modules/projects/search-mode/SearchModeCustomerLayout.vue";
+import GoPresentationBtn from "@/components/modules/projects/GoPresentationBtn.vue";
 
 type Mode = "main-mode" | "user-search";
 const mode:Ref<Mode> = ref("main-mode");
@@ -34,7 +35,10 @@ const modeRightLayout: ComputedRef = computed(()=>{
   <projects-layout>
     <q-page>
       <div class="row justify-center q-px-xl inherit-min-height bg-brown-2">
-        <full-screen-btn class="absolute-top-right q-mr-md q-mt-md" />
+        <div class="absolute-top-right q-mr-md q-mt-md">
+          <go-presentation-btn />
+          <full-screen-btn />
+        </div>
         <div
           class="col-6 q-my-auto row justify-center"
         >
