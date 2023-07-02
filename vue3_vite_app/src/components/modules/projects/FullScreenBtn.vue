@@ -4,7 +4,8 @@ import {useQuasar} from "quasar";
 const $q = useQuasar()
 
 const toggle = (e: any) => {
-  const target = e.target.parentNode.parentNode.parentNode.parentNode.parentNode;
+  // const target = e.target.parentNode.parentNode.parentNode.parentNode.parentNode;
+  let target: Element | undefined = document.getElementById('full-screen-wrap') || undefined;
 
   $q.fullscreen.toggle(target)
       .then(() => {

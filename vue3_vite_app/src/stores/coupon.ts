@@ -53,7 +53,8 @@ export const useCouponStore = defineStore('coupon',{
         ],
         selectedUserId: 0,
         selectedCouponId: 0,
-        selectedCouponList: []
+        selectedCouponList: [],
+        is_fullscreen: false,
     }),
     actions: {
         setSelectedUserId(id: number) {
@@ -64,6 +65,9 @@ export const useCouponStore = defineStore('coupon',{
         },
         setSelectedCouponList(list: any) {
             this.selectedCouponList = list;
+        },
+        setFullscreen(is_fullscreen: boolean) {
+            this.is_fullscreen = is_fullscreen;
         },
         getInitialCouponId(couponList: any) {
             return couponList[couponList.length-1].id

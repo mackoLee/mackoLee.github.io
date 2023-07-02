@@ -9,6 +9,9 @@ import MainModeAdminLayout from "@/components/modules/projects/main-mode/MainMod
 import SearchModeAdminLayout from "@/components/modules/projects/search-mode/SearchModeAdminLayout.vue";
 import SearchModeCustomerLayout from "@/components/modules/projects/search-mode/SearchModeCustomerLayout.vue";
 import GoPresentationBtn from "@/components/modules/projects/GoPresentationBtn.vue";
+import {useQuasar} from "quasar";
+
+const $q = useQuasar();
 
 type Mode = "main-mode" | "user-search";
 const mode:Ref<Mode> = ref("main-mode");
@@ -30,11 +33,18 @@ const modeRightLayout: ComputedRef = computed(()=>{
   }
   return MainModeAdminLayout;
 })
+
+const is_fullscreen = computed(() => {
+  return $q.fullscreen.isActive;
+})
 </script>
 <template>
   <projects-layout>
     <q-page>
-      <div class="row justify-center q-px-xl inherit-min-height bg-brown-2">
+      <div
+        id="full-screen-wrap"
+        class="row justify-center q-px-xl inherit-min-height bg-brown-2"
+      >
         <div class="absolute-top-right q-mr-md q-mt-md">
           <go-presentation-btn />
           <full-screen-btn />
@@ -65,5 +75,7 @@ const modeRightLayout: ComputedRef = computed(()=>{
 <style scoped>
 .inherit-min-height{
   min-height: inherit;
+  height: inherit;
 }
+
 </style>
