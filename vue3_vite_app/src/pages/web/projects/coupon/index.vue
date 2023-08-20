@@ -10,12 +10,13 @@ import SearchModeAdminLayout from "@/components/modules/projects/search-mode/Sea
 import SearchModeCustomerLayout from "@/components/modules/projects/search-mode/SearchModeCustomerLayout.vue";
 import GoPresentationBtn from "@/components/modules/projects/GoPresentationBtn.vue";
 import {useQuasar} from "quasar";
+import GoProjectPageBtn from "@/components/modules/projects/GoProjectPageBtn.vue";
 
 const $q = useQuasar();
 
 type Mode = "main-mode" | "user-search";
-const mode:Ref<Mode> = ref("main-mode");
-const modeLeftLayout: ComputedRef = computed( () => {
+const mode: Ref<Mode> = ref("main-mode");
+const modeLeftLayout: ComputedRef = computed(() => {
   switch (mode.value) {
     case "main-mode":
       return MainModeCustomerLayout;
@@ -24,8 +25,8 @@ const modeLeftLayout: ComputedRef = computed( () => {
   }
   return MainModeCustomerLayout;
 })
-const modeRightLayout: ComputedRef = computed(()=>{
-  switch (mode.value){
+const modeRightLayout: ComputedRef = computed(() => {
+  switch (mode.value) {
     case "main-mode":
       return MainModeAdminLayout;
     case "user-search":
@@ -40,32 +41,35 @@ const is_fullscreen = computed(() => {
 </script>
 <template>
   <projects-layout>
-    <q-page>
-      <div
-        id="full-screen-wrap"
-        class="row justify-center q-px-xl inherit-min-height bg-brown-2"
-      >
-        <div class="absolute-top-right q-mr-md q-mt-md">
-          <go-presentation-btn />
-          <full-screen-btn />
-        </div>
+    <q-page class="row">
+      <div class="col">
         <div
-          class="col-6 q-my-auto row justify-center"
+          id="full-screen-wrap"
+          class="row justify-center q-px-xl full-height bg-brown-2"
         >
-          <component
-            :is="modeLeftLayout"
+          <div class="absolute-top-right q-mr-md q-mt-md">
+            <go-project-page-btn />
+            <go-presentation-btn />
+            <full-screen-btn />
+          </div>
+          <div
+            class="col-6 q-my-auto row justify-center"
+          >
+            <component
+              :is="modeLeftLayout"
+            />
+            <!--          <user-search-table />-->
+            <coupon-card test />
+          </div>
+          <q-separator
+            vertical
+            class="absolute full-height"
           />
-          <!--          <user-search-table />-->
-          <coupon-card test />
-        </div>
-        <q-separator
-          vertical
-          class="absolute full-height"
-        />
-        <div class="col-6 q-my-auto row justify-center">
-          <component
-            :is="modeRightLayout"
-          />
+          <div class="col-6 q-my-auto row justify-center">
+            <component
+              :is="modeRightLayout"
+            />
+          </div>
         </div>
       </div>
     </q-page>
@@ -73,7 +77,7 @@ const is_fullscreen = computed(() => {
 </template>
 
 <style scoped>
-.inherit-min-height{
+.inherit-min-height {
   min-height: inherit;
   height: inherit;
 }
