@@ -1,1 +1,0 @@
-import{_ as t}from"./DefaultLayout.vue_vue_type_script_setup_true_lang-43fb1103.js";import{a,c as o,w as s,o as n,g as e}from"./index-eed11b81.js";const _=e("h3",null," Introduce ",-1),c=e("p",null," This is a vue3 vite app. ",-1),d=a({__name:"index",setup(r){return(i,p)=>(n(),o(t,null,{default:s(()=>[_,c]),_:1}))}});export{d as default};
