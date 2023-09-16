@@ -1,1 +1,0 @@
-import{_ as e}from"./DefaultLayout.vue_vue_type_script_setup_true_lang-12a05a3b.js";import{a,o as t,c as o,w as n,b as r}from"./index-309c853f.js";const f=a({__name:"index",setup(s){return(_,c)=>(t(),o(e,null,{default:n(()=>[r(" 하이 ")]),_:1}))}});export{f as default};

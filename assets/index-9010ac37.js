@@ -1,1 +1,0 @@
-import{u as t}from"./plugins-83017a06.js";import{a as o,f as s,o as n}from"./index-b40ab190.js";const i=o({__name:"index",setup(r){const{router:e}=t();return e.push("/web/tests/i18n"),(a,c)=>(n(),s("div"))}});export{i as default};

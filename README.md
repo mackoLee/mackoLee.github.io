@@ -1,7 +1,63 @@
-# 2023-07-09(일) 도장수첩 프로젝트 시작
-  - 인원: 이윤건, 박조예
-  - 디자인 figma: https://www.figma.com/file/ZCRR5aK5dJGxyjAORBFhAy/Untitled?type=design&node-id=0-1&mode=design&t=hq7GI2N0ntaw7P5S-0
-  - 기획: https://docs.google.com/presentation/d/10VzjN6X-O7ntR9cr-bpjErelVCFsr5GvF_GnYg0VfB8/edit#slide=id.p 
+# Nuxt 3 Minimal Starter
 
-# MackoLee.github.io
-For Make PortFolio
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+
+## Setup
+
+Make sure to install the dependencies:
+
+```bash
+# npm
+npm install
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+```
+
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm run dev
+
+# yarn
+yarn dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm run build
+
+# yarn
+yarn build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
