@@ -39,7 +39,7 @@ jobs:
       - name: Install dependencies
         run: cd nuxt & yarn install
       - name: Static HTML export with Nuxt
-        run: cd nuxt & yarn run generate
+        run: yarn run generate
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
