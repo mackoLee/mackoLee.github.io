@@ -11,6 +11,23 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "nuxt": "^3.7.3"
+    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxtjs/eslint-module": "^4.1.0",
+    "@nuxtjs/i18n": "^8.0.0-rc.4",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-nuxt": "^3.2.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nuxt": "^3.7.3",
+    "prettier": "^2.8.8",
+    "sass": "^1.67.0",
+    "sass-loader": "^13.3.2"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^2.8.1",
+    "@pinia-plugin-persistedstate/nuxt": "^1.1.1",
+    "@pinia/nuxt": "^0.4.11",
+    "nuxt-icon": "^0.5.0",
+    "pinia": "^2.1.6"
   }
 }
