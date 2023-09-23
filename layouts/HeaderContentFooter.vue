@@ -7,7 +7,6 @@
     >
       <header class="h-[--header-height]">
         <LayoutHeader />
-        <div class="w-full h-1 shadow-xl" />
         <div class="border-t border-t-gray-700 w-full" />
       </header>
       <div
@@ -19,7 +18,6 @@
         </slot>
       </div>
       <footer class="bg-white dark:bg-black h-[--footer-height] sticky bottom-0">
-        <div class="w-full shadow-lg" />
         <div class="border-t border-t-gray-700 w-full" />
         <LayoutFooter />
       </footer>
