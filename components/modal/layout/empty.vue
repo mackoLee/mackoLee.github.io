@@ -1,5 +1,5 @@
 <template>
   <div>
-    Footer 입니다.
+    <slot />
   </div>
 </template>

@@ -1,0 +1,3 @@
+<template>
+  <FooterLayout />
+</template>

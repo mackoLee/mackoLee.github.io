@@ -3,10 +3,9 @@
 definePageMeta({
   layout: 'default-header-footer',
 })
-
 </script>
 <template>
   <div>
-    <HomePage />
+    Projects 페이지입니다.
   </div>
 </template>

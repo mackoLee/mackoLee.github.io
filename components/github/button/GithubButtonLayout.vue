@@ -1,0 +1,10 @@
+<template>
+  <RoundButton
+    color="gray"
+  >
+    <Icon
+      name="mdi:github"
+      size="20"
+    />
+  </RoundButton>
+</template>

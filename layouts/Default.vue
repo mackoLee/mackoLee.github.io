@@ -1,5 +1,10 @@
+<script setup lang="ts">
+import { handleAuthClick, handleSignoutClick } from "~/plugins/googleapis";
+
+
+</script>
 <template>
-  <div>
+  <div class="default123">
     <slot />
   </div>
 </template>
