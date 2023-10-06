@@ -1,12 +1,23 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import '@nuxt/ui'
+import vitePluginRequire from "vite-plugin-require";
 
 export default defineNuxtConfig({
+    vite: {
+        optimizeDeps: {disabled: false},
+        plugins: [
+            vitePluginRequire()
+        ],
+        build: {
+            commonjsOptions: {
+                include: []
+            }
+        }
+    },
     runtimeConfig: {
         public: {
             GOOGLE_API_KEY: process.env.GOOGLE_API_KEY,
             SPREAD_SHEET_ID: process.env.SPREAD_SHEET_ID,
-            GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
         }
     },
     imports: {
@@ -27,9 +38,17 @@ export default defineNuxtConfig({
     },
     css: ['~/assets/styles/main.css'],
 
-    modules: ['@nuxtjs/eslint-module', '@nuxtjs/i18n', 'nuxt-icon', '@nuxt/ui', 'nuxt-lodash'],
+    modules: [
+        '@nuxtjs/eslint-module',
+        '@nuxtjs/i18n',
+        'nuxt-icon',
+        '@nuxt/ui',
+        'nuxt-lodash',
+        '@pinia/nuxt',
+        'dayjs-nuxt'
+    ],
     plugins: [
-        {src: 'plugins/googleapis'}
+        {src: 'plugins/googleapis'},
     ],
     eslint: {},
     lodash: {
@@ -43,4 +62,35 @@ export default defineNuxtConfig({
             ["isDate", "isLodashDate"], // => _isLodashDate
         ],
     },
+    i18n: {
+        strategy: 'prefix_and_default',
+        defaultLocale: 'ko',
+        vueI18n: './i18n.config.ts',
+        locales: [
+            {
+                code: 'en',
+                iso: 'en-US',
+            },
+            {
+                code: 'ko',
+                iso: 'ko-KR',
+            },
+            {
+                code: 'ja',
+                iso: 'ja-JP'
+            }
+        ]
+    },
+    dayjs: {
+        locales: ['ko', 'en'],
+        defaultLocale: 'ko',
+        defaultTimeZone: 'Asia/Seoul',
+        plugins: [
+            'utc',
+            'timezone',
+            'updateLocale',
+        ]
+
+    }
+
 });

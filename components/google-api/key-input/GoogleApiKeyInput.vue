@@ -7,12 +7,8 @@ const apiKey = computed({
 })
 </script>
 <template>
-  <UFormGroup
-    label="Google API Key"
-  >
-    <UInput
-      v-model="apiKey"
-      placeholder="Google API Key"
-    />
-  </UFormGroup>
+  <GoogleApiInputLayout
+    v-model="apiKey"
+    name="apiKey"
+  />
 </template>

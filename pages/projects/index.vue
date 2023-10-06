@@ -7,5 +7,7 @@ definePageMeta({
 <template>
   <div>
     Projects 페이지입니다.
+
+    <I18nSwitchLocaleSelectMenu />
   </div>
 </template>

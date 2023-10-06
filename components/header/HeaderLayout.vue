@@ -7,7 +7,7 @@
       <div class="flex-1 flex gap-x-8">
         <NuxtLink
           class="text-sm font-semibold"
-          to="/projects"
+          :to="useLocalePath()('/projects')"
         >
           Projects
         </NuxtLink>
@@ -31,9 +31,10 @@
         </NuxtLink>
       </div>
       <div class="flex-1 flex gap-0.5 justify-end">
+        <I18nSwitchLocaleSelectMenu />
         <ThemeButton />
         <GithubButton />
-        <GoogleApiConnectModalShowBtn />
+        <GoogleApiConnectFormShowAsModalButton />
       </div>
     </div>
   </div>

@@ -20,6 +20,5 @@
       <div class="border-t border-t-gray-700 w-full" />
       <Footer />
     </footer>
-    <Modal />
   </div>
 </template>

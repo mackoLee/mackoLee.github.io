@@ -1,47 +1,144 @@
-export function useGoogleApiStore() {
-    const DISCOVERY_DOC: string = 'https://sheets.googleapis.com/$discovery/rest?version=v4';
+import {defineStore} from 'pinia';
 
-    return useState('googleApiStore',()=>{
-        const apiKey: Ref<string> = ref('');
-        const clientId: Ref<string> = ref('593691061710-og346hl8vl4t2ukkgl5uolqicaapmtvs.apps.googleusercontent.com');
-        const scopes: Ref<string|string[]> = ref('');
-        const sheetId: Ref<string> = ref('');
-        const gapiloaded: Ref<boolean> = ref(false);
 
-        function connect(){
-            gapi.load('client', initializeGapiClient);
-        }
+const DISCOVERY_DOC: string = 'https://sheets.googleapis.com/$discovery/rest?version=v4';
+const SCOPES: string = 'https://www.googleapis.com/auth/spreadsheets';
 
-        async function initializeGapiClient() {
-            await gapi.client.init({
-                apiKey: apiKey.value,
-                discoveryDocs: [DISCOVERY_DOC],
-            });
-            gapiloaded.value = true;
-        }
-
-        function setGoogleApiKey(value){
-            apiKey.value = value
-        }
-        async function loadGoogleApiKey(strategy = 'sessionStorage'){
+export const useGoogleApiStore = defineStore('googleApi',()=>{
+        // @ts-ignore
+        const [gapi, google] = [window.gapi, window.google];
+        async function loadAll(strategy: string='sessionStorage'){
             if(strategy === 'sessionStorage') {
-                apiKey.value = sessionStorage.getItem('google_api_key') || 'AIzaSyDzuZgo-pF-4be2-vA_Y0VmGUpO5WPNBgA'
-                return
-            }
-        }
-        async function updateGoogleApiKey(value, strategy = 'sessionStorage') {
-            apiKey.value = value
-            if (strategy === 'sessionStorage'){
-                sessionStorage.setItem('google_api_key', value)
+                const googleApi = sessionStorage.getItem('google_api')
+                if(googleApi){
+                    const googleApiJson = JSON.parse(googleApi)
+                    apiKey.value = googleApiJson.apiKey
+                    spreadsheetId.value = googleApiJson.spreadsheetId
+                    clientId.value = googleApiJson.clientId
+                }
+                else{
+                    apiKey.value = 'AIzaSyDzuZgo-pF-4be2-vA_Y0VmGUpO5WPNBgA'
+                    spreadsheetId.value = '1s4Qkqh2CkWGOsK0LCSJ4p_Hwks1ePFpQrrvXKRmAJNw'
+                    clientId.value = ''
+                }
                 return;
             }
         }
 
-        return {
-            apiKey,
-            setGoogleApiKey,
-            loadGoogleApiKey,
-            updateGoogleApiKey
+        async function saveAll(strategy: string='sessionStorage'){
+            if (strategy === 'sessionStorage'){
+                sessionStorage.setItem('google_api', JSON.stringify({
+                    apiKey: apiKey.value,
+                    spreadsheetId: spreadsheetId.value,
+                    clientId: clientId.value,
+                }))
+                return;
+            }
         }
-    }).value
-}
+
+        async function resetAll(){
+            await loadAll();
+        }
+
+        const apiKey: Ref<string> = ref('AIzaSyDzuZgo-pF-4be2-vA_Y0VmGUpO5WPNBgA');
+        function setApiKey(value: string){
+            apiKey.value = value
+        }
+
+
+        const spreadsheetId: Ref<string> = ref('1s4Qkqh2CkWGOsK0LCSJ4p_Hwks1ePFpQrrvXKRmAJNw');
+        function setSpreadsheetId(value: string){
+            spreadsheetId.value = value
+        }
+
+
+        const clientId: Ref<string> = ref('');
+        const setClientId = (value: string) => {
+            clientId.value = value
+        }
+
+        const scopes: Ref<string|string[]> = ref('');
+
+
+        const gapiInited: Ref<boolean> = ref(false);
+        async function loadGapi(){
+            await gapi.load('client', initializeGapiClient);
+        }
+        async function initializeGapiClient(){
+            let token = sessionStorage.getItem('google_token')||null;
+            if(token){
+                token = JSON.parse(token)
+            }
+
+            await gapi.client.init({
+                apiKey: apiKey.value,
+                discoveryDocs: [DISCOVERY_DOC],
+            })
+            gapi.client.setToken(token);
+            gapiInited.value = true;
+        }
+        async function saveGapiToken(strategy: string='sessionStorage') {
+            const token = gapi.auth.getToken();
+            if (strategy === 'sessionStorage'){
+                sessionStorage.setItem('google_token', JSON.stringify(token))
+                // after 1 hour
+                // const time = new Date(new Date().getTime() + 60*60*1000);
+
+                sessionStorage.setItem('google_token_expires_at', time.toString())
+            }
+        }
+
+        const gisInited: Ref<boolean> = ref(false);
+        const tokenClient :Ref<any> = ref(null);
+
+        async function requestAccessToken(callback: Function){
+            if(!gisInited.value){
+                await loadGis();
+            }
+
+            tokenClient.value.callback = ()=>{
+                callback();
+                saveGapiToken();
+            }
+            if(gapi.client.getToken() === null) {
+                tokenClient.value.requestAccessToken({prompt: 'consent'});
+            }
+            else{
+                tokenClient.value.requestAccessToken({prompt: ''});
+            }
+        }
+
+        async function loadGis(){
+            tokenClient.value = await google.accounts.oauth2.initTokenClient({
+                client_id: clientId.value,
+                scope: SCOPES,
+                callback: '', // defined later
+            });
+
+            gisInited.value = true;
+        }
+
+
+        return {
+            loadAll,
+            saveAll,
+            resetAll,
+
+            apiKey,
+            setApiKey,
+
+            spreadsheetId,
+            setSpreadsheetId,
+
+            clientId,
+            setClientId,
+
+            gapiInited,
+            loadGapi,
+            saveGapiToken,
+
+            requestAccessToken,
+            gisInited,
+            loadGis
+        }
+    })

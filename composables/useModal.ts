@@ -1,14 +1,3 @@
-import {ModalObj} from "~/components/modal";
-
-export function useModal() {
-    const open = (modalObj: ModalObj) => {
-        useNuxtApp().$openModal(modalObj);
-    }
-    const hide = () => {
-        useNuxtApp().$hideModal();
-    }
-    return {
-        open,
-        hide
-    };
+export function useModal(): any {
+    return useNuxtApp().$modal;
 }

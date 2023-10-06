@@ -3,23 +3,30 @@ const {loadRows} = useIntroduceApi("googleSheet")
 
 const googleApiStore = useGoogleApiStore();
 
-const localGoogleApiKey = computed({
-  get: () => googleApiStore.apiKey,
-  set: (value) => googleApiStore.setGoogleApiKey(value),
+watch(()=>googleApiStore.gapiInited, (value)=>{
+  if(value){
+    loadRows()
+  }
 })
-
-const saveGoogleApiKey = () => {
-  googleApiStore.updateGoogleApiKey(localGoogleApiKey.value)
+async function init(){
+  await googleApiStore.loadAll();
+  await googleApiStore.loadGapi();
+  if(googleApiStore.clientId){
+    await googleApiStore.loadGis();
+  }
 }
 
-onMounted(() => {
-  loadRows()
-      .then((res) => {
-        console.log(res)
-      })
+onMounted(init);
 
-  googleApiStore.loadGoogleApiKey()
-})
+
+// const sheets = google.sheets({
+//   version: 'v4',
+//   auth: googleApiStore.apiKey
+// })
+
+// console.log(sheets)
+
+
 </script>
 <template>
   <HomePageLayout />

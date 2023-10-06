@@ -7,7 +7,7 @@ const getVars = () => {
     return {SPREADSHEET_ID}
 }
 
-export function useGoogleIntroduceApiImpl() {
+export function useGoogleIntroduceApiImplV2() {
     // @ts-ignore
     const [gapi, google] = [window.gapi, window.google];
 
@@ -53,12 +53,9 @@ export function useGoogleIntroduceApiImpl() {
             if (tryTimes >= maxTryTimes) {
                 throw err;
             }
-
-            gapi.client.setToken(null);
-            updateRow(tryTimes + 1);
-            // await useGoogleApiStore().requestAccessToken(()=>
-            //     updateRow(tryTimes+1)
-            // );
+            await useGoogleApiStore().requestAccessToken(()=>
+                updateRow(tryTimes+1)
+            );
             // gapi.client.setToken(null);
             // await updateRow(tryTimes + 1);
         }

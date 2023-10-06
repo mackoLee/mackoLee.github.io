@@ -1,6 +1,6 @@
 function install() {
     const gapi_script = document.createElement("script");
-    gapi_script.src = "/google/api";
+    gapi_script.src = "/google/api.js";
     gapi_script.onload = () => {
     };
     document.body.appendChild(gapi_script);

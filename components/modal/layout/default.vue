@@ -27,22 +27,40 @@ const emit = defineEmits(['close', 'ok', 'cancel']);
 
 const onClose = () => {
   emit('close');
-  nuxtApp.$hideModal()
+  nuxtApp.$modal.hide();
 }
 
 const onCancel = () => {
   emit('cancel');
-  nuxtApp.$hideModal()
+  nuxtApp.$modal.hide();
 }
 
 const onOk = () => {
   emit('ok');
-  nuxtApp.$hideModal()
+  nuxtApp.$modal.hide();
 }
+
+const localUi = computed(()=>{
+  const result = {}
+
+  if(props.hideHeader){
+    result['header'] = {
+      padding: 'p-0',
+    }
+  }
+  if(props.hideFooter){
+    result['footer'] = {
+      padding: 'p-0',
+    }
+  }
+  return result
+})
 
 </script>
 <template>
-  <u-card>
+  <u-card
+    :ui="localUi"
+  >
     <template #header>
       <slot name="header">
         <div
@@ -50,14 +68,15 @@ const onOk = () => {
           class="flex justify-between items-center"
         >
           <div
-            class="text-xl font-bold"
+            class="text-lg font-semibold"
           >
             {{ title }}
           </div>
-          <div>
+          <div class="flex">
             <icon
-              class="cursor-pointer"
-              :name="'ant-design:close-outlined'"
+              class="cursor-pointer my-auto"
+              name="ic:baseline-close"
+              size="25"
               @click="onClose"
             />
           </div>

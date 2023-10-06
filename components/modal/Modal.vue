@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import {ModalObj, ModalLayout} from './index.d.ts';
+import type {ModalObj, ModalLayout} from './modal.d.ts';
 import defaultLayout from './layout/default.vue';
 import emptyLayout from './layout/empty.vue';
 
 const nuxtApp = useNuxtApp()
 
-const show = ref(false);
+const show: Ref<boolean> = ref(false);
 
 const localComponent = shallowRef(null)
 const localSize = ref('lg');
@@ -26,29 +26,39 @@ const ComputedLayout = computed(() => {
     return emptyLayout;
   }
 })
+const localLayoutProps = ref({});
 
+function openModal(modalObj: ModalObj){
+    modalObj
+        .component()
+        .then(res => {
+          localComponent.value = res.default
+          if (modalObj.size) {
+            localSize.value = modalObj.size;
+          }
+          if (modalObj.preventClose) {
+            localPreventClose.value = modalObj.preventClose;
+          }
+          if (modalObj.layout) {
+            localLayout.value = modalObj.layout;
+          }
+          if (modalObj.layoutProps) {
+            localLayoutProps.value = modalObj.layoutProps;
+          }
+          show.value = true;
+        });
+}
 
-nuxtApp.provide('openModal', (modalObj: ModalObj) => {
-  modalObj
-      .component()
-      .then(res => {
-        localComponent.value = res.default
-        if (modalObj.size) {
-          localSize.value = modalObj.size;
-        }
-        if (modalObj.preventClose) {
-          localPreventClose.value = modalObj.preventClose;
-        }
-        if (modalObj.layout) {
-          localLayout.value = modalObj.layout;
-        }
-        show.value = true;
-      });
-})
-
-nuxtApp.provide('hideModal', () => {
+function hideModal(){
   show.value = false;
+}
+
+
+nuxtApp.provide('modal', {
+  open: openModal,
+  hide: hideModal
 })
+
 
 </script>
 <template>
@@ -61,7 +71,9 @@ nuxtApp.provide('hideModal', () => {
     }"
   >
     <div class="p-0">
-      <ComputedLayout>
+      <ComputedLayout
+        v-bind="localLayoutProps"
+      >
         <component
           :is="localComponent"
         />
