@@ -1,0 +1,1 @@
+import{as as i,at as a,ar as r,au as s,C as n,av as c}from"./entry.57d90270.js";function f(e){const{route:t,router:u,i18n:o}=e||{};return c({route:t||a(),router:u||r(),i18n:o||s(n().$i18n)})}function l(e){const{route:t,router:u,i18n:o}=e||{};return i({route:t||a(),router:u||r(),i18n:o||s(n().$i18n)})}function p(e){return e}export{l as a,p as d,f as u};
