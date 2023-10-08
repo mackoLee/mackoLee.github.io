@@ -23,7 +23,7 @@
     <GoogleApiConnectForm />
     <template #footer>
       <div class="flex justify-between">
-        <GoogleApiSubmitButton />
+        <GoogleApiConnectButton />
         <GoogleApiSaveButton />
       </div>
     </template>

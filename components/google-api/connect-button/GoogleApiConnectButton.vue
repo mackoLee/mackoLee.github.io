@@ -2,5 +2,5 @@
 
 </script>
 <template>
-  <GoogleApiSubmitButtonLayout />
+  <GoogleApiConnectButtonLayout />
 </template>

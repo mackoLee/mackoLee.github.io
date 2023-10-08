@@ -5,39 +5,38 @@
         <Logo />
       </div>
       <div class="flex-1 flex gap-x-8">
+        <PagesPlaygroundPageLink />
         <NuxtLink
-          class="text-sm font-semibold"
           :to="useLocalePath()('/projects')"
-        >
-          Projects
-        </NuxtLink>
-        <NuxtLink
-          class="text-sm font-semibold"
-          to="/projects"
-        >
-          Projects
-        </NuxtLink>
-        <NuxtLink
-          class="text-sm font-semibold"
-          to="/projects"
-        >
-          Projects
-        </NuxtLink>
-        <NuxtLink
-          class="text-sm font-semibold"
-          to="/projects"
         >
           Projects
         </NuxtLink>
       </div>
       <div class="flex-1 flex gap-0.5 justify-end">
         <I18nSwitchLocaleSelectMenu />
-        <ThemeButton />
-        <GithubButton />
-        <GoogleApiConnectFormShowAsModalButton />
+
+        <ThemeSwitch
+          v-slot="{ defaultIcon, onClick }"
+        >
+          <RoundIconButtonLayout
+            :icon-name="defaultIcon"
+            @click="onClick"
+          />
+        </ThemeSwitch>
+
+        <GithubOpen
+          v-slot="{ defaultIcon, onClick}"
+        >
+          <RoundIconButtonLayout
+            :icon-name="defaultIcon"
+            @click="onClick"
+          />
+        </GithubOpen>
+        <GoogleApiConnectFormShowAsModal />
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
+import PagesPlaygroundPageLink from "~/components/pages/playground-page/link/PagesPlaygroundPageLink.vue";
 </script>

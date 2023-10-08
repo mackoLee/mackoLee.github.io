@@ -13,6 +13,6 @@ const onClick = ()=>{
     variant="link"
     @click="onClick"
   >
-    Connect
+    {{ $t('연결') }}
   </UButton>
 </template>

@@ -29,5 +29,5 @@ onMounted(init);
 
 </script>
 <template>
-  <HomePageLayout />
+  <PagesHomePageLayout />
 </template>

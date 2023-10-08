@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type {ModalObj, ModalLayout} from './modal.d.ts';
-import defaultLayout from './layout/default.vue';
-import emptyLayout from './layout/empty.vue';
+import defaultLayout from '~/components/modal/layouts/default.vue';
+import emptyLayout from '~/components/modal/layouts/empty.vue';
 
 const nuxtApp = useNuxtApp()
 

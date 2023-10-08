@@ -14,16 +14,18 @@ function validate(state) {
 
 function submit(state) {
   // useIntroduceApi().updateRow();
+
+
 }
 
 onUnmounted(() => {
-  googleApiStore.loadAll();
+  googleApiStore.resetAll();
 })
 
 </script>
 <template>
   <GoogleApiConnectFormLayout
-    :state="googleApiStore"
+    :state="googleApiStore.$state"
     :validate="validate"
     @submit="submit"
   />

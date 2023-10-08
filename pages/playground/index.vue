@@ -1,9 +1,10 @@
 <script setup lang="ts">
+
 definePageMeta({
   layout: 'default-header-footer',
 })
 
 </script>
 <template>
-  <PagesHomePage />
+  <PagesPlaygroundPage />
 </template>

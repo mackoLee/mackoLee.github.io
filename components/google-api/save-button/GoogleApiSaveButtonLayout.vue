@@ -5,6 +5,6 @@
   <UButton
     type="button"
   >
-    Save
+    {{ $t('저장') }}
   </UButton>
 </template>

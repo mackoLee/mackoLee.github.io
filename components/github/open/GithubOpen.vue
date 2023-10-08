@@ -4,7 +4,10 @@ const onClick = () => {
 }
 </script>
 <template>
-  <GithubButtonLayout
-    @click="onClick"
-  />
+  <div>
+    <slot
+      :default-icon="`mdi:github`"
+      :on-click="onClick"
+    />
+  </div>
 </template>

@@ -5,6 +5,14 @@ const props = defineProps({
     type: Object,
     default: () => ({}),
   },
+  iconName: {
+    type: String,
+    default: '',
+  },
+  iconSize: {
+    type: Number,
+    default: 20,
+  },
 })
 </script>
 <template>
@@ -16,7 +24,12 @@ const props = defineProps({
       },
       ...props.ui
     }"
+    color="gray"
   >
-    <slot />
+    <Icon
+      :name="iconName"
+      :height="`${$props.iconSize}`"
+      :width="`${$props.iconSize}`"
+    />
   </UButton>
 </template>

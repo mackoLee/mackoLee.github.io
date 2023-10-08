@@ -14,6 +14,6 @@ const items = [[
   <UDropdown
     :items="items"
   >
-    <GoogleApiResetButtonLayoutV2 />
+    <GoogleApiResetButtonV2Layout />
   </UDropdown>
 </template>
