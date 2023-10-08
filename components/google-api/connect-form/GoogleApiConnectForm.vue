@@ -14,8 +14,6 @@ function validate(state) {
 
 function submit(state) {
   // useIntroduceApi().updateRow();
-
-
 }
 
 onUnmounted(() => {
@@ -24,9 +22,16 @@ onUnmounted(() => {
 
 </script>
 <template>
-  <GoogleApiConnectFormLayout
+  <UForm
+    class="flex flex-col gap-3"
+
     :state="googleApiStore.$state"
     :validate="validate"
     @submit="submit"
-  />
+  >
+    <GoogleApiKeyInput />
+    <GoogleApiSpreadsheetIdInput />
+    <div class="w-full border-t border-gray-200 dark:border-gray-700" />
+    <GoogleApiClientIdInput />
+  </UForm>
 </template>

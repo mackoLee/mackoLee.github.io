@@ -15,28 +15,23 @@
       <div class="flex-1 flex gap-0.5 justify-end">
         <I18nSwitchLocaleSelectMenu />
 
-        <ThemeSwitch
-          v-slot="{ defaultIcon, onClick }"
-        >
-          <RoundIconButtonLayout
-            :icon-name="defaultIcon"
-            @click="onClick"
-          />
-        </ThemeSwitch>
-
+        <RoundIconButton
+          :icon-name="defaultIcon"
+          @click="onSwitch"
+        />
         <GithubOpen
-          v-slot="{ defaultIcon, onClick}"
+          v-slot="githubOpen"
         >
-          <RoundIconButtonLayout
-            :icon-name="defaultIcon"
-            @click="onClick"
+          <RoundIconButton
+            :icon-name="githubOpen.defaultIcon"
+            @click="githubOpen.onClick"
           />
         </GithubOpen>
-        <GoogleApiConnectFormShowAsModal />
+        <GoogleApiConnectFormShowAsModalButton />
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import PagesPlaygroundPageLink from "~/components/pages/playground-page/link/PagesPlaygroundPageLink.vue";
+const {defaultIcon, onSwitch} = useTheme()
 </script>
