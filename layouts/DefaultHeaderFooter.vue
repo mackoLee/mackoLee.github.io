@@ -6,7 +6,7 @@
       <Header />
       <div class="border-t border-t-gray-700 w-full" />
     </header>
-    <div class="flex-1">
+    <div class="grow flex-col flex">
       <pre
         id="content"
         style="white-space: pre-wrap;"

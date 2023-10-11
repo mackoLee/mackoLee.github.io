@@ -18,15 +18,6 @@ const convertSize = ref({
   'xl': 'sm:max-w-xl'
 })
 const localPreventClose = ref(false);
-const localLayout: Ref<ModalLayout> = ref('defaultLayout');
-const ComputedLayout = computed(() => {
-  if (localLayout.value === 'defaultLayout') {
-    return defaultLayout;
-  } else if (localLayout.value === 'emptyLayout') {
-    return emptyLayout;
-  }
-})
-const localLayoutProps = ref({});
 
 function openModal(modalObj: ModalObj){
     modalObj
@@ -38,12 +29,6 @@ function openModal(modalObj: ModalObj){
           }
           if (modalObj.preventClose) {
             localPreventClose.value = modalObj.preventClose;
-          }
-          if (modalObj.layout) {
-            localLayout.value = modalObj.layout;
-          }
-          if (modalObj.layoutProps) {
-            localLayoutProps.value = modalObj.layoutProps;
           }
           show.value = true;
         });
@@ -70,14 +55,8 @@ nuxtApp.provide('modal', {
       padding: 'p-0',
     }"
   >
-    <div class="p-0">
-      <ComputedLayout
-        v-bind="localLayoutProps"
-      >
-        <component
-          :is="localComponent"
-        />
-      </ComputedLayout>
-    </div>
+    <component
+      :is="localComponent"
+    />
   </u-modal>
 </template>

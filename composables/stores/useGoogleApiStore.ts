@@ -57,65 +57,9 @@ export const useGoogleApiStore = defineStore('googleApi',()=>{
             clientId.value = value
         }
 
-        const scopes: Ref<string|string[]> = ref('');
+        const tokenClient: Ref<object|null> = ref(null);
+        const setTokenClient = (value: object) => {
 
-
-        const gapiInited: Ref<boolean> = ref(false);
-        async function loadGapi(){
-            await gapi.load('client', initializeGapiClient);
-        }
-        async function initializeGapiClient(){
-            let token = sessionStorage.getItem('google_token')||null;
-            if(token){
-                token = JSON.parse(token)
-            }
-
-            await gapi.client.init({
-                apiKey: apiKey.value,
-                discoveryDocs: [DISCOVERY_DOC],
-            })
-            gapi.client.setToken(token);
-            gapiInited.value = true;
-        }
-        async function saveGapiToken(strategy: string='sessionStorage') {
-            const token = gapi.auth.getToken();
-            if (strategy === 'sessionStorage'){
-                sessionStorage.setItem('google_token', JSON.stringify(token))
-                // after 1 hour
-                // const time = new Date(new Date().getTime() + 60*60*1000);
-
-                sessionStorage.setItem('google_token_expires_at', time.toString())
-            }
-        }
-
-        const gisInited: Ref<boolean> = ref(false);
-        const tokenClient :Ref<any> = ref(null);
-
-        async function requestAccessToken(callback: Function){
-            if(!gisInited.value){
-                await loadGis();
-            }
-
-            tokenClient.value.callback = ()=>{
-                callback();
-                saveGapiToken();
-            }
-            if(gapi.client.getToken() === null) {
-                tokenClient.value.requestAccessToken({prompt: 'consent'});
-            }
-            else{
-                tokenClient.value.requestAccessToken({prompt: ''});
-            }
-        }
-
-        async function loadGis(){
-            tokenClient.value = await google.accounts.oauth2.initTokenClient({
-                client_id: clientId.value,
-                scope: SCOPES,
-                callback: '', // defined later
-            });
-
-            gisInited.value = true;
         }
 
 
@@ -133,12 +77,5 @@ export const useGoogleApiStore = defineStore('googleApi',()=>{
             clientId,
             setClientId,
 
-            gapiInited,
-            loadGapi,
-            saveGapiToken,
-
-            requestAccessToken,
-            gisInited,
-            loadGis
         }
     })
