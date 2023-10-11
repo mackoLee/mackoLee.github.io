@@ -1,0 +1,1 @@
+import{k as o,r as t,c as n,d as c,b as a,o as r}from"./entry.5c666ba4.js";const m=o({__name:"index",setup(s){return(l,_)=>{const e=t("I18nSwitchLocaleSelectMenu");return r(),n("div",null,[c(" Projects 페이지입니다. "),a(e)])}}});export{m as default};

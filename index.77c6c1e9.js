@@ -1,1 +1,0 @@
-import{_ as o,o as n,c as a,j as t,g as r}from"./entry.a79ec5c3.js";const m={},p={class:"mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl"};function u(e,_){return n(),a("div",p," hi yo ")}const x=o(m,[["render",u]]),d={};function f(e,_){const c=x;return n(),t(c)}const i=o(d,[["render",f]]),g=r({__name:"index",setup(e){return(_,c)=>{const s=i;return n(),t(s)}}});export{g as default};

@@ -1,1 +1,0 @@
-import{_ as o}from"./I18nSwitchLocaleSelectMenu.vue.6cc59c7d.js";import{g as t,c,d as n,b as a,o as r}from"./entry.a79ec5c3.js";import"./composables.e790a241.js";const d=t({__name:"index",setup(s){return(_,m)=>{const e=o;return r(),c("div",null,[n(" Projects 페이지입니다. "),a(e)])}}});export{d as default};
