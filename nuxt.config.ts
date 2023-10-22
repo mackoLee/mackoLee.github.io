@@ -1,18 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import '@nuxt/ui'
-import vitePluginRequire from "vite-plugin-require";
-
 export default defineNuxtConfig({
     vite: {
         optimizeDeps: {disabled: false},
         plugins: [
-            vitePluginRequire()
         ],
         build: {
             commonjsOptions: {
                 include: []
             }
-        }
+        },
+
     },
     runtimeConfig: {
         public: {
@@ -27,10 +24,10 @@ export default defineNuxtConfig({
         ]
     },
     devtools: {enabled: true},
-    ssr: false,
-
+    ssr: (process.env.SSR === 'true'),
+    // ssr: true,
     app: {
-        cdnURL: 'https://mackolee.github.io/',
+        // cdnURL: 'https://mackolee.github.io/',
         buildAssetsDir: './',
     },
     dir: {
@@ -84,11 +81,10 @@ export default defineNuxtConfig({
     dayjs: {
         locales: ['ko', 'en'],
         defaultLocale: 'ko',
-        defaultTimeZone: 'Asia/Seoul',
+        defaultTimezone: 'Asia/Seoul',
         plugins: [
             'utc',
             'timezone',
-            'updateLocale',
         ]
 
     }

@@ -12,12 +12,22 @@ function validate(state:any) {
 
 function submit(state:any) {
   const a = document.createElement('a');
-  a.href = 'https://accounts.google.com/o/oauth2/v2/auth?'
-            +'client_id=' + state.data.clientId
-            +'&redirect_uri=http://localhost:3000/token/callback'
-            +'&response_type=token'
-            +'&scope=https://www.googleapis.com/auth/spreadsheets';
+  // a.href = useOauth2Client().generateAuthUrl({
+  //   scope: 'https://www.googleapis.com/auth/spreadsheets',
+  //   client_id: state.data.clientId,
+  //   redirect_uri: 'http://localhost:3000/token/callback',
+  //   response_type: 'token',
+  // });
+  a.href = useOauth2Client().generateAuthUrl({
+    scope: 'https://www.googleapis.com/auth/spreadsheets',
+    client_id: state.data.clientId,
+    redirect_uri: 'http://localhost:3000/code/callback',
+    response_type: 'code',
+  })
+
+  // console.log(a.href)
   a.click();
+
 }
 
 onUnmounted(() => {

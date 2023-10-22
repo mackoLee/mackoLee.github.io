@@ -52,15 +52,11 @@ export const useGoogleApiStore = defineStore('googleApi',()=>{
         }
 
 
-        const clientId: Ref<string> = ref('');
+        const clientId: Ref<string> = ref('510041133698-506u7to3s5tfv34lcmpjvh6s9nk7ppmd.apps.googleusercontent.com');
         const setClientId = (value: string) => {
             clientId.value = value
         }
 
-        const tokenClient: Ref<object|null> = ref(null);
-        const setTokenClient = (value: object) => {
-
-        }
 
 
         return {

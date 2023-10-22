@@ -2,7 +2,7 @@
 import type {ModalObj} from '~/components/modal/Modal.d.ts'
 const onClick = () => {
   const modalObj: ModalObj = {
-    component: () => import('~/components/modals/google-api-modal/index.vue'),
+    component: () => import('~/components/modals/google-api/index.vue'),
     size: 'sm',
   }
   useModal().open(modalObj)

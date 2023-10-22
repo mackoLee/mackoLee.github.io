@@ -7,7 +7,10 @@
     "dev": "nuxt dev --dotenv configs/.env.dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "gcp-build": "nuxt build && node .output/server/index.mjs",
+    "git-generate": "nuxt generate --dotenv configs/.env.git",
+    "start": "nuxt start"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -16,7 +19,7 @@
     "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/i18n": "^8.0.0-rc.4",
     "@pinia/nuxt": "^0.4.11",
-    "dayjs-nuxt": "^2.0.2",
+    "dayjs-nuxt": "^2.1.1",
     "eslint": "^8.49.0",
     "eslint-plugin-nuxt": "^3.2.0",
     "nuxt": "^3.7.3",
@@ -28,7 +31,6 @@
   },
   "dependencies": {
     "broadcast-channel": "^5.3.0",
-    "mitt": "^3.0.1",
-    "vite-plugin-require": "^1.1.11"
+    "mitt": "^3.0.1"
   }
 }

@@ -8,7 +8,7 @@
       구글 연동하기
     </div>
     <div class="flex ml-auto gap-2 my-auto">
-      <ModalsGoogleApiModalDropdownOfReset />
+      <ModalsGoogleApiDropdownReset />
       <icon
         class="cursor-pointer"
         name="ic:baseline-close"

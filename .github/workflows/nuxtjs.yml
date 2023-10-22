@@ -39,7 +39,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Static HTML export with Nuxt
-        run: yarn run generate
+        run: yarn run git-generate
       - name: To read file with lodash.
         run: echo > .output/public/.nojekyll
       - name: Deploy

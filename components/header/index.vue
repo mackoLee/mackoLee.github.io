@@ -9,11 +9,11 @@
         <HeaderLink to="projects" />
       </div>
       <div class="flex-1 flex gap-2 justify-end">
-        <HeaderSelectMenuOfI18nSwitchLocale />
-        <HeaderButtonOfThemeSwitch />
-        <HeaderButtonOfGithubOpen />
+        <HeaderSelectMenuI18nSwitchLocale />
+        <HeaderButtonThemeSwitch />
+        <HeaderButtonGithubOpen />
 
-        <HeaderButtonOfGoogleApiModalShow />
+        <HeaderButtonGoogleApiConnect />
       </div>
     </div>
   </div>
