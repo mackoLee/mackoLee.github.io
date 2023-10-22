@@ -1,1 +1,0 @@
-import{au as i,h as r,ao as a,av as n,ar as s,aw as c}from"./entry.5c666ba4.js";function h(e){const{route:o,router:t,i18n:u}=e||{};return i({route:o||r(),router:t||a(),i18n:u||n(s().$i18n)})}function l(e){const{route:o,router:t,i18n:u}=e||{};return c({route:o||r(),router:t||a(),i18n:u||n(s().$i18n)})}function p(e){return e}export{l as a,p as d,h as u};
