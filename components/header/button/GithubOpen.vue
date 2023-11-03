@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const onClick = () => {
-  window.open('https://github.com/MackoLee/MackoLee.github.io/tree/main-nuxt', '_blank');
+  window.open('https://github.com/MackoLee', '_blank');
 }
 </script>
 <template>
