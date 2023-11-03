@@ -1,1 +1,0 @@
-import{k as e,c as o,o as t}from"./entry.b47d061c.js";const s={class:"mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-7xl"},_=e({__name:"index",setup(a){return(n,c)=>(t(),o("div",s," hi yo "))}});export{_ as default};

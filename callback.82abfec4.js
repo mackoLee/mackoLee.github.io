@@ -1,1 +1,0 @@
-import{_ as s,c as o,t,g as a,o as n,h as c}from"./entry.b47d061c.js";const r={};function u(e,l){return n(),o("div",null,t(("useRoute"in e?e.useRoute:a(c))()),1)}const i=s(r,[["render",u]]);export{i as default};

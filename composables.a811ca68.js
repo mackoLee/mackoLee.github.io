@@ -1,0 +1,1 @@
+import{at as a,h as r,ao as s,au as n,as as i}from"./entry.46ef4463.js";function h(e){const{route:t,router:o,i18n:u}=e||{};return a({route:t||r(),router:o||s(),i18n:u||n(i().$i18n)})}function p(e){return e}export{p as d,h as u};

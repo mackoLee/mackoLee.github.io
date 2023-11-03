@@ -1,0 +1,1 @@
+import{_ as c,r as o,c as t,d as n,b as r,o as a}from"./entry.46ef4463.js";const s={};function l(_,d){const e=o("I18nSwitchLocaleSelectMenu");return a(),t("div",null,[n(" Projects 페이지입니다. "),r(e)])}const f=c(s,[["render",l]]);export{f as default};
